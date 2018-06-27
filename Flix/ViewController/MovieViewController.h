@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MovieViewController.h
 //  Flix
 //
 //  Created by Tiffany Ma on 6/27/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MovieViewController : UIViewController
 
 @end
-
