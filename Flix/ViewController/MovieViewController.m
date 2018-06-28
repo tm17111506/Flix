@@ -8,7 +8,10 @@
 
 #import "MovieViewController.h"
 
-@interface MovieViewController ()
+@interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *movies;
 
 @end
 
@@ -18,6 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
@@ -29,6 +34,12 @@
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             
             NSLog(@"@%@", dataDictionary);
+            self.movies = dataDictionary[@"results"];
+            for (NSDictionary *movie in self.movies){
+                NSLog(@"@%@", movie[@"title"]);
+            }
+            
+            [self.tableView reloadData];
             // TODO: Get the array of movies
             // TODO: Store the movies in a property to use elsewhere
             // TODO: Reload your table view data
@@ -41,6 +52,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.movies.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    NSDictionary *movie = self.movies[indexPath.row];
+    cell.textLabel.text = movie[@"title"];
+    return cell;
 }
 
 /*
