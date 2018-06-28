@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="353" y="835"/>
         </scene>
-        <!--All Movies-->
+        <!--Superhero-->
         <scene sceneID="pYP-qI-fEa">
             <objects>
                 <viewController id="tMQ-2v-gxh" customClass="MoviesGridViewController" sceneMemberID="viewController">
@@ -117,7 +117,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dPw-xT-3vf"/>
                     </view>
-                    <navigationItem key="navigationItem" title="All Movies" id="z5V-sh-b2Z"/>
+                    <navigationItem key="navigationItem" title="Superhero" id="z5V-sh-b2Z"/>
                     <connections>
                         <outlet property="collectionView" destination="fOC-62-2I0" id="0eH-Fm-jwf"/>
                     </connections>
@@ -181,7 +181,7 @@
         <scene sceneID="z6y-tn-rpW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ife-jn-90Y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Now Playing" id="naa-oo-x8R"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="now_playing_tabbar_item" id="naa-oo-x8R"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ASR-BV-EyP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -196,11 +196,11 @@
             </objects>
             <point key="canvasLocation" x="354" y="99"/>
         </scene>
-        <!--All Movies-->
+        <!--Superhero-->
         <scene sceneID="hDz-iQ-fSf">
             <objects>
                 <navigationController id="T1J-xh-oHd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All Movies" id="bK1-i2-3I3"/>
+                    <tabBarItem key="tabBarItem" title="Superhero" image="superhero_tabbar_item" id="bK1-i2-3I3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="15s-Yf-ShC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -232,4 +232,8 @@
             <point key="canvasLocation" x="1015" y="-716"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="now_playing_tabbar_item" width="21" height="21"/>
+        <image name="superhero_tabbar_item" width="21" height="23"/>
+    </resources>
 </document>
