@@ -7,6 +7,8 @@
 //
 
 #import "MovieViewController.h"
+#import "MovieCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -60,9 +62,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     NSDictionary *movie = self.movies[indexPath.row];
-    cell.textLabel.text = movie[@"title"];
+    cell.titleLabel.text = movie[@"title"];
+    cell.blurbLabel.text = movie[@"overview"];
+    
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = movie[@"poster_path"];
+    NSString *imageURLString = [baseURLString stringByAppendingString:posterURLString];
+//    cell.textLabel.text = movie[@"title"];
+    NSURL *imageURL = [NSURL URLWithString:imageURLString];
+    cell.imageLabel.image = nil;
+    [cell.imageLabel setImageWithURL:imageURL];
     return cell;
 }
 
