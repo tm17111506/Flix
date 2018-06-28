@@ -1,15 +1,15 @@
 //
-//  DetalisViewController.m
+//  GridDetailsViewController.m
 //  Flix
 //
 //  Created by Tiffany Ma on 6/28/18.
 //  Copyright © 2018 Tiffany Ma. All rights reserved.
 //
 
-#import "DetalisViewController.h"
+#import "GridDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface DetalisViewController ()
+@interface GridDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backDropView;
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -17,11 +17,12 @@
 
 @end
 
-@implementation DetalisViewController
+@implementation GridDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = self.movie[@"poster_path"];
     NSString *imageURLString = [baseURLString stringByAppendingString:posterURLString];
@@ -33,7 +34,7 @@
     NSString *backDrop_pathString = self.movie[@"backdrop_path"];
     NSString *backDropURLString = [baseURLString stringByAppendingString:backDrop_pathString];
     NSURL *backDropURL = [NSURL URLWithString:backDropURLString];
-
+    
     self.backDropView.image = nil;
     [self.backDropView setImageWithURL:backDropURL];
     

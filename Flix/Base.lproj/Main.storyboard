@@ -109,6 +109,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterView" destination="cVt-JJ-bQI" id="ge8-Fk-Euj"/>
+                                            <segue destination="NCt-rA-CH9" kind="show" id="thE-us-3wd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -125,6 +126,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTl-ou-lKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1637.5999999999999" y="878.41079460269873"/>
+        </scene>
+        <!--Grid Details View Controller-->
+        <scene sceneID="n3x-2W-k7k">
+            <objects>
+                <viewController id="NCt-rA-CH9" customClass="GridDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fKB-fx-6CK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-OW-ddS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Dm-xs-tYP">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="313"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bD-Ex-om5">
+                                        <rect key="frame" x="8" y="180" width="129" height="179"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIH-QE-Lxa">
+                                        <rect key="frame" x="145" y="259" width="222" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJh-VU-5r8">
+                                        <rect key="frame" x="8" y="367" width="359" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zhr-bX-K0K"/>
+                    </view>
+                    <connections>
+                        <outlet property="backDropView" destination="2Dm-xs-tYP" id="mUi-Yc-20y"/>
+                        <outlet property="blurbLabel" destination="BJh-VU-5r8" id="GXU-Bh-uzD"/>
+                        <outlet property="posterView" destination="3bD-Ex-om5" id="z5v-i9-9h2"/>
+                        <outlet property="titleLabel" destination="FIH-QE-Lxa" id="yfB-N3-mcN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fq6-ss-GkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629.5999999999999" y="1563.8680659670167"/>
         </scene>
         <!--Detalis View Controller-->
         <scene sceneID="F3h-SL-BrW">
