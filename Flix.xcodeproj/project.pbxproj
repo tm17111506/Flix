@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9273BC3620E4632900B8899F /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273BC3520E4632900B8899F /* MovieCell.m */; };
+		9286022A20E55A5A005CCB2D /* DetalisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286022920E55A5A005CCB2D /* DetalisViewController.m */; };
 		92C64FBD20E40A7400879827 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C64FBC20E40A7400879827 /* AppDelegate.m */; };
 		92C64FC320E40A7400879827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C64FC120E40A7400879827 /* Main.storyboard */; };
 		92C64FC520E40A7500879827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C64FC420E40A7500879827 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 		60DA3EC4CAA47219D57058B2 /* libPods-Flix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9273BC3420E4632900B8899F /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		9273BC3520E4632900B8899F /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		9286022820E55A5A005CCB2D /* DetalisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetalisViewController.h; sourceTree = "<group>"; };
+		9286022920E55A5A005CCB2D /* DetalisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetalisViewController.m; sourceTree = "<group>"; };
 		92C64FB820E40A7400879827 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C64FBB20E40A7400879827 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92C64FBC20E40A7400879827 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				92C64FD120E4145B00879827 /* MovieViewController.h */,
 				92C64FD220E4145B00879827 /* MovieViewController.m */,
 				9273BC3420E4632900B8899F /* MovieCell.h */,
+				9286022820E55A5A005CCB2D /* DetalisViewController.h */,
+				9286022920E55A5A005CCB2D /* DetalisViewController.m */,
 				9273BC3520E4632900B8899F /* MovieCell.m */,
 			);
 			path = ViewController;
@@ -204,6 +209,7 @@
 				92C64FBD20E40A7400879827 /* AppDelegate.m in Sources */,
 				9273BC3620E4632900B8899F /* MovieCell.m in Sources */,
 				92C64FD320E4145B00879827 /* MovieViewController.m in Sources */,
+				9286022A20E55A5A005CCB2D /* DetalisViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
