@@ -7,6 +7,6 @@ target 'Flix' do
 
   # Pods for Flix
   pod 'AFNetworking'
-  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'SVProgressHUD'
 
 end
