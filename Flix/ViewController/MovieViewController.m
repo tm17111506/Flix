@@ -68,7 +68,7 @@
                 
                 self.movies = dataDictionary[@"results"];
                 self.data = self.movies;
-                self.filteredData = self.data;
+                self.filteredData = self.movies;
                 
                 [self.tableView reloadData];
                 // TODO: Get the array of movies
@@ -127,6 +127,7 @@
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     self.searchBar.showsCancelButton = YES;
+    [self.tableView reloadData];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -137,8 +138,6 @@
     [self.searchBar resignFirstResponder];
 }
 
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -147,11 +146,10 @@
     // Pass the selected object to the new view controller.
     UITableViewCell *tappedCell = sender;
     NSIndexPath *tappedIndex = [self.tableView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.movies[tappedIndex.row];
+    NSDictionary *movie = self.filteredData[tappedIndex.row];
     
     DetalisViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
 }
-
 
 @end
