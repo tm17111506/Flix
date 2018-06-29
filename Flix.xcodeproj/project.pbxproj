@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923C409D20E6DB4A00BC89CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923C409C20E6DB4A00BC89CA /* WebKit.framework */; };
+		923C40A020E6DB9500BC89CA /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C409F20E6DB9500BC89CA /* TrailerViewController.m */; };
 		9273BC3620E4632900B8899F /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273BC3520E4632900B8899F /* MovieCell.m */; };
 		9286022A20E55A5A005CCB2D /* DetalisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286022920E55A5A005CCB2D /* DetalisViewController.m */; };
 		9286022D20E57697005CCB2D /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286022C20E57697005CCB2D /* MoviesGridViewController.m */; };
@@ -24,6 +26,9 @@
 /* Begin PBXFileReference section */
 		3FF1A1DECEECC5A5A66BD8E8 /* Pods-Flix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flix/Pods-Flix.release.xcconfig"; sourceTree = "<group>"; };
 		60DA3EC4CAA47219D57058B2 /* libPods-Flix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		923C409C20E6DB4A00BC89CA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		923C409E20E6DB9500BC89CA /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
+		923C409F20E6DB9500BC89CA /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		9273BC3420E4632900B8899F /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		9273BC3520E4632900B8899F /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		9286022820E55A5A005CCB2D /* DetalisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetalisViewController.h; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923C409D20E6DB4A00BC89CA /* WebKit.framework in Frameworks */,
 				949D5D1147F0D313E7A71390 /* libPods-Flix.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +68,7 @@
 		0478CE1AC2EFB571DEFBE426 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				923C409C20E6DB4A00BC89CA /* WebKit.framework */,
 				60DA3EC4CAA47219D57058B2 /* libPods-Flix.a */,
 			);
 			name = Frameworks;
@@ -114,6 +121,8 @@
 		92C64FD420E414BB00879827 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				923C409E20E6DB9500BC89CA /* TrailerViewController.h */,
+				923C409F20E6DB9500BC89CA /* TrailerViewController.m */,
 				9286023120E5A32D005CCB2D /* GridDetailsViewController.h */,
 				9286023220E5A32D005CCB2D /* GridDetailsViewController.m */,
 				9286022B20E57697005CCB2D /* MoviesGridViewController.h */,
@@ -246,6 +255,7 @@
 				9286023020E579C7005CCB2D /* MovieCollectionCell.m in Sources */,
 				92C64FD320E4145B00879827 /* MovieViewController.m in Sources */,
 				9286022A20E55A5A005CCB2D /* DetalisViewController.m in Sources */,
+				923C40A020E6DB9500BC89CA /* TrailerViewController.m in Sources */,
 				9286022D20E57697005CCB2D /* MoviesGridViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
