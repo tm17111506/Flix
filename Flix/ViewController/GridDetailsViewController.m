@@ -8,12 +8,14 @@
 
 #import "GridDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "TrailerViewController.h"
 
 @interface GridDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backDropView;
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *blurbLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
 
@@ -40,6 +42,7 @@
     
     self.titleLabel.text = self.movie[@"title"];
     self.blurbLabel.text = self.movie[@"overview"];
+    self.dateLabel.text = self.movie[@"release_date"];
     
     [self.titleLabel sizeToFit];
     [self.blurbLabel sizeToFit];
@@ -49,15 +52,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)onTapImage:(id)sender {
+    [self performSegueWithIdentifier:@"trailerGridSegue" sender:nil];
+}
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    TrailerViewController *trailerViewController = [segue destinationViewController];
+    trailerViewController.movie = self.movie;
 }
-*/
+
 
 @end
