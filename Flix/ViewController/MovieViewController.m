@@ -94,6 +94,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    UIView *backgroundView = [[UIView alloc] init];
+    backgroundView.backgroundColor = UIColor.darkGrayColor;
+    cell.selectedBackgroundView = backgroundView;
+
     NSDictionary *movie = self.filteredData[indexPath.row];
     cell.titleLabel.text = movie[@"title"];
     cell.blurbLabel.text = movie[@"overview"];
@@ -105,6 +110,7 @@
     
     cell.imageLabel.image = nil;
     [cell.imageLabel setImageWithURL:imageURL];
+    
     return cell;
 }
 
