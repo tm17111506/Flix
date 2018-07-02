@@ -11,15 +11,16 @@
 #import "UIImageView+AFNetworking.h"
 #import "DetalisViewController.h"
 #import "SVProgressHUD.h"
+#import "Movie.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSMutableArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, strong) NSArray *filteredData;
-@property (nonatomic, strong) NSArray *data;
+@property (nonatomic, strong) NSMutableArray *filteredData;
+@property (nonatomic, strong) NSMutableArray *data;
 
 @end
 
@@ -32,6 +33,8 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
+    
+    self.movies = [[NSMutableArray alloc]init];
     
     [self fetchMovie];
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -66,7 +69,11 @@
             else {
                 NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                 
-                self.movies = dataDictionary[@"results"];
+                NSArray *dictionaries = dataDictionary[@"results"];
+                for (NSDictionary *dictionary in dictionaries){
+                    Movie *movie = [[Movie alloc] initWithDictionary:dictionary];
+                    [self.movies addObject:movie];
+                }
                 self.data = self.movies;
                 self.filteredData = self.movies;
                 
@@ -99,17 +106,19 @@
     backgroundView.backgroundColor = UIColor.darkGrayColor;
     cell.selectedBackgroundView = backgroundView;
 
-    NSDictionary *movie = self.filteredData[indexPath.row];
-    cell.titleLabel.text = movie[@"title"];
-    cell.blurbLabel.text = movie[@"overview"];
-    
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = movie[@"poster_path"];
-    NSString *imageURLString = [baseURLString stringByAppendingString:posterURLString];
-    NSURL *imageURL = [NSURL URLWithString:imageURLString];
-    
-    cell.imageLabel.image = nil;
-    [cell.imageLabel setImageWithURL:imageURL];
+    cell.movie = self.filteredData[indexPath.row];
+    [cell setMovie:cell.movie];
+//    NSDictionary *movie = self.filteredData[indexPath.row];
+//    cell.titleLabel.text = movie[@"title"];
+//    cell.blurbLabel.text = movie[@"overview"];
+//
+//    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+//    NSString *posterURLString = movie[@"poster_path"];
+//    NSString *imageURLString = [baseURLString stringByAppendingString:posterURLString];
+//    NSURL *imageURL = [NSURL URLWithString:imageURLString];
+//
+//    cell.imageLabel.image = nil;
+//    [cell.imageLabel setImageWithURL:imageURL];
     
     return cell;
 }
@@ -119,7 +128,7 @@
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
             return [evaluatedObject[@"title"] containsString:searchText];
         }];
-        self.filteredData = [self.data filteredArrayUsingPredicate:predicate];
+        self.filteredData = [NSMutableArray arrayWithArray:[self.data filteredArrayUsingPredicate:predicate]];
     }
     else{
         self.filteredData = self.data;
@@ -149,7 +158,7 @@
     // Pass the selected object to the new view controller.
     UITableViewCell *tappedCell = sender;
     NSIndexPath *tappedIndex = [self.tableView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.filteredData[tappedIndex.row];
+    Movie *movie = self.filteredData[tappedIndex.row];
     
     DetalisViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;

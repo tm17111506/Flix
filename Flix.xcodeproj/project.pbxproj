@@ -20,6 +20,7 @@
 		92C64FC820E40A7500879827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C64FC620E40A7500879827 /* LaunchScreen.storyboard */; };
 		92C64FCB20E40A7500879827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C64FCA20E40A7500879827 /* main.m */; };
 		92C64FD320E4145B00879827 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C64FD220E4145B00879827 /* MovieViewController.m */; };
+		92E042F720EA9DD9005D782C /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E042F620EA9DD9005D782C /* Movie.m */; };
 		949D5D1147F0D313E7A71390 /* libPods-Flix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60DA3EC4CAA47219D57058B2 /* libPods-Flix.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		92C64FCA20E40A7500879827 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92C64FD120E4145B00879827 /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		92C64FD220E4145B00879827 /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		92E042F520EA9DD9005D782C /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		92E042F620EA9DD9005D782C /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		D1E6441831283AF34F712742 /* Pods-Flix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flix/Pods-Flix.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +107,8 @@
 		92C64FBA20E40A7400879827 /* Flix */ = {
 			isa = PBXGroup;
 			children = (
+				92E042F520EA9DD9005D782C /* Movie.h */,
+				92E042F620EA9DD9005D782C /* Movie.m */,
 				92C64FD420E414BB00879827 /* ViewController */,
 				92C64FBB20E40A7400879827 /* AppDelegate.h */,
 				92C64FBC20E40A7400879827 /* AppDelegate.m */,
@@ -250,6 +255,7 @@
 			files = (
 				92C64FCB20E40A7500879827 /* main.m in Sources */,
 				9286023320E5A32D005CCB2D /* GridDetailsViewController.m in Sources */,
+				92E042F720EA9DD9005D782C /* Movie.m in Sources */,
 				92C64FBD20E40A7400879827 /* AppDelegate.m in Sources */,
 				9273BC3620E4632900B8899F /* MovieCell.m in Sources */,
 				9286023020E579C7005CCB2D /* MovieCollectionCell.m in Sources */,

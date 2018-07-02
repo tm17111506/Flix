@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     NSString *baseString = @"https://api.themoviedb.org/3/movie/";
     NSString *endString = @"/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US";
-    NSString *idString = [NSString stringWithFormat:@"%@", self.movie[@"id"]];
+    NSString *idString = [NSString stringWithFormat:@"%@", self.movie.idString];
     NSString *partOneURLString = [baseString stringByAppendingString:idString];
     NSString *urlString = [partOneURLString stringByAppendingString:endString];
     NSURL *url = [NSURL URLWithString:urlString];
